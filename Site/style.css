@@ -22,8 +22,7 @@ a :hover{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-family: 'Metal Mania';
-    font-size: large;
+    font-family: system-ui, -apple-system, Helvetica, sans-serif;
     background: #2D2A4A;
     height: 8vh;
     font-weight: bold;
@@ -37,4 +36,6 @@ a :hover{
 .nav-list li {
     letter-spacing: 3px;
     margin-left: 32px;
+
 }
+
