@@ -23,7 +23,7 @@ a :hover{
     justify-content: space-around;
     align-items: center;
     font-family: system-ui, -apple-system, Helvetica, sans-serif;
-    background: #2D2A4A;
+    background: #000000;
     height: 8vh;
     font-weight: bold;
 }
@@ -31,6 +31,7 @@ a :hover{
 .nav-list {
     list-style: none;
     display: flex;
+    
 }
 
 .nav-list li {
@@ -39,3 +40,10 @@ a :hover{
 
 }
 
+.Inicio {
+    height: 800px;
+    background-image: url(../Site/Imagens/Academia-Ironworks-Prime-Gramado-e-São-Borja-RS-Modalidade-Muay-Thai.webp);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center center;
+}
