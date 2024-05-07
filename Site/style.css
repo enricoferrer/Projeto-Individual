@@ -42,8 +42,20 @@ a :hover{
 
 .Inicio {
     height: 800px;
-    background-image: url(../Site/Imagens/Academia-Ironworks-Prime-Gramado-e-São-Borja-RS-Modalidade-Muay-Thai.webp);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../Site/Imagens/Academia-Ironworks-Prime-Gramado-e-São-Borja-RS-Modalidade-Muay-Thai.webp);
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-blend-mode: luminosity;
+}
+
+.TextoInicio {
+    font-size: 80px;
+    color: #2f258d;
+    font-family: system-ui, -apple-system, Helvetica, sans-serif;
+
 }
