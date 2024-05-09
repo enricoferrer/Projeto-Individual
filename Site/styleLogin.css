@@ -5,6 +5,8 @@ body {
 * {
     margin: 0;
     padding: 0;
+    font-family: system-ui, -apple-system, Helvetica, sans-serif;
+    ;
 }
 
 a {
@@ -13,7 +15,7 @@ a {
     transition: 0.5s;
 }
 
-a :hover{
+a :hover {
     opacity: 0.7;
 }
 
@@ -35,7 +37,7 @@ a :hover{
 .nav-list {
     list-style: none;
     display: flex;
-    
+
 }
 
 .nav-list li {
@@ -46,7 +48,7 @@ a :hover{
 
 .Inicio {
     height: 864px;
-    background-image:url(../Site/Imagens/muay-thai.jpg) ;
+    background-image: url(../Site/Imagens/muay-thai.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -58,31 +60,49 @@ a :hover{
 
 .contLogin {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 500px;
     height: 650px;
-    background-color: #A51931;
+    background-color: #ffffff;
     border-radius: 50px;
 }
 
-.conteudoLogin  {
+.conteudoLogin {
     height: 100%;
+    width: 100%;
     display: flex;
-    align-items:baseline;
+    align-items: baseline;
     justify-content: space-evenly;
     flex-direction: column;
 }
 
 .conteudoLogin t {
-    color:#2D2A4A;
+    color: #2D2A4A;
     font-size: 70px;
     font-family: system-ui, -apple-system, Helvetica, sans-serif;
 }
 
 .conteudoLogin c {
-    color:#2D2A4A;
+    color: #2D2A4A;
     font-size: 40px;
     font-family: system-ui, -apple-system, Helvetica, sans-serif;
+}
+
+.input {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: 300ms ease-in-out;
+}
+
+.input:focus {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+        -13px -13px 100px #ffffff;
 }
