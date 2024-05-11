@@ -48,7 +48,7 @@ a :hover{
 }
 
 .Inicio {
-    height: 800px;
+    height: 864px;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(../imagens/Academia-Ironworks-Prime-Gramado-e-São-Borja-RS-Modalidade-Muay-Thai.webp);
     background-repeat: no-repeat;
@@ -61,6 +61,26 @@ a :hover{
 }
 
 .TextoInicio {
-    font-size: 80px;
+    font-size: 83px;
     color: #ffffff;
+    opacity: 0;
+    animation: appear 1.5s forwards;
+    position: relative;
+    top: 100px; 
+    text-shadow: 0 0 15px #A51931, 0 0 15px #A51931, 0 0 30px #A51931;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        top: 100px; 
+    }
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+.sobreMim {
+    height: 800px;
+    color: whitesmoke;
 }
