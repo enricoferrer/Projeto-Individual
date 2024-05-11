@@ -43,10 +43,6 @@ a :hover{
 
 }
 
-.loginCont {
-    background-color: white;
-}
-
 .Inicio {
     height: 864px;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -82,5 +78,37 @@ a :hover{
 }
 .sobreMim {
     height: 800px;
-    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+}
+
+.ContImagemSM {
+    width: 50%;
+    height: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContTextoSM {
+    width: 50%;
+    height: 100%;
+    background-color: #000;
+    color: white;
+}
+
+.textoSM {
+    color: white;
+    padding: 5%;
+}
+
+.textoSM span{
+    font-size: 19px;
+}
+
+.imagemSM {
+    width: 85%;
+    height: 85%;
+    background-color: #A51931;
 }

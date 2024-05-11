@@ -74,7 +74,7 @@ a :hover {
 
 .form-image img{
     width: 40rem;
-    height: 38rem;
+    height: 35rem;
 }
 
 .form {
@@ -174,7 +174,7 @@ a :hover {
 }
 
 @media screen and (max-width: 1330px) {
-    .form-image {
+    .form-image img {
         display: none;
     }
     .container {
