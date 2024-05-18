@@ -108,7 +108,121 @@ a :hover{
 }
 
 .imagemSM {
-    width: 85%;
-    height: 85%;
-    background-color: #A51931;
+    width: 100%;
+    height: 100%;
 }
+
+.imagemSM > img {
+    background-image: url(../imagens/eu.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center right;
+} 
+
+.inspirações{
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloINSP{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tituloINSP > span {
+    color: white;
+    font-size: 33px;
+}
+
+.inspiraçõesCARDS{
+    height: 450px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #000;
+}
+
+
+.cardINSP {
+    width: 270px;
+    height: 366px;
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 20px;
+    transition: all .3s;
+  }
+  
+  .cardINSP2 {
+    width: 270px;
+    height: 366px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    transition: all .2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cardINSP2:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+  }
+  
+  .cardINSP:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+  }
+
+  .fotoINSP{
+    height: 80%;
+    width: 100%;
+    background-color: rgb(133, 51, 51);
+    border-radius: 19px 19px 0px 0px;
+  }
+
+  .textoINSP{
+    height: 20%;
+    width: 100%;
+    background-color: rgb(78, 89, 114);
+    border-radius: 0 0 19px 19px;
+  }
+
+  .textoINSP > span {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 21px;
+  }
+
+  .textoINSP > h6 {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: lighter;
+    text-align: center;
+  }
+
+  .i2 {
+    background-image: url(../imagens/nathalia.jpg) ;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center center;
+    border-radius: 22px 22px 0 0;
+  }
+
+  .i3 {
+    background-image: url(../imagens/Kru\ manop\ smile.jpg) ;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center center;
+    border-radius: 22px 22px 0 0;
+  }
