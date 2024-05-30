@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz MuayArt</title>
+    <link rel="stylesheet" href="./../css/quiz.css">
+</head>
+
+<body>
+    <div class="tudo">
+        <div id="quiz-container" class="quiz-container">
+            <h1>Qual é o seu estilo de Lutador?</h1>
+            <button id="btnIniciar" onclick="iniciarQuiz()">Iniciar Quiz!</button>
+            <div id="pergunta-container" style="display: none;">
+                <h2 id="pergunta">Pergunta 1: Você é uma pessoa estrategista?</h2>
+                <button id="1" onclick="proximaPergunta('A')">Sim</button>
+                <button id="2" onclick="proximaPergunta('B')">Depende da ocasião</button>
+                <button id="3" onclick="proximaPergunta('C')">Não</button>
+                <button id="4" onclick="proximaPergunta('D')">Nunca fui e nem serei!</button>
+            </div>
+            <div id="resultado-container" style="display: none;">
+                <h2 id="resultado-titulo">Você seria um lutador:</h2>
+                <p id="resultado" class="resultado">Resultado</p>
+                <a href="dashboard.html"><button>Voltar para a Dashboard!</button></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let numeroPergunta = 1;
+        let muayFimeu = 0
+        let muayKhao = 0
+        let muayDan = 0
+        let muayMatt = 0
+        let estiloLutador;
+        let mensagemLutador;
+
+        function iniciarQuiz() {
+            document.getElementById('pergunta-container').style.display = 'block';
+            document.getElementById('btnIniciar').style.display = 'none';
+        }
+        function proximaPergunta(resposta) {
+            if (numeroPergunta === 1) {
+                numeroPergunta++;
+                if (resposta === 'A') {
+                    muayFimeu = muayFimeu + 3;
+                    muayKhao = muayKhao + 1;
+                    document.getElementById('pergunta').innerHTML = 'Pergunta 2: Durante uma luta, Qual seria o seu ponto mais forte?';
+                    document.getElementById('1').innerHTML = `Meus golpes de mão!`
+                    document.getElementById('2').innerHTML = `Meus cotovelos!`
+                    document.getElementById('3').innerHTML = `Meus Chutes!`
+                    document.getElementById('4').innerHTML = `Sou muito versátil!`
+                } else if (resposta === 'B') {
+                    muayFimeu = muayFimeu + 1;
+                    muayKhao = muayKhao + 2;
+                    document.getElementById('pergunta').innerHTML = 'Pergunta 2: Durante uma luta, Qual seria o seu ponto mais forte?';
+                    document.getElementById('1').innerHTML = `Meus golpes de mão!`
+                    document.getElementById('2').innerHTML = `Meus cotovelos!`
+                    document.getElementById('3').innerHTML = `Meus Chutes!`
+                    document.getElementById('4').innerHTML = `Sou muito versátil!`
+                } else if (resposta === 'C') {
+                    muayDan = muayDan + 1;
+                    muayMatt = muayMatt + 2;
+                    document.getElementById('pergunta').innerHTML = 'Pergunta 2: Durante uma luta, Qual seria o seu ponto mais forte?';
+                    document.getElementById('1').innerHTML = `Meus golpes de mão!`
+                    document.getElementById('2').innerHTML = `Meus cotovelos!`
+                    document.getElementById('3').innerHTML = `Meus Chutes!`
+                    document.getElementById('4').innerHTML = `Sou muito versátil!`
+                } else if (resposta === 'D') {
+                    muayDan = muayDan + 3;
+                    muayMatt = muayMatt + 1;
+                    document.getElementById('pergunta').innerHTML = 'Pergunta 2: Durante uma luta, Qual seria o seu ponto mais forte?';
+                    document.getElementById('1').innerHTML = `Meus golpes de mão!`
+                    document.getElementById('2').innerHTML = `Meus cotovelos!`
+                    document.getElementById('3').innerHTML = `Meus Chutes!`
+                    document.getElementById('4').innerHTML = `Sou muito versátil!`
+                }
+            } else if (numeroPergunta === 2) {
+                numeroPergunta++;
+                if (resposta === 'A') {
+                    muayDan = muayDan + 3;
+                    muayMatt = muayMatt + 1;
+                    document.getElementById('pergunta').innerHTML = 'Pergunta 3: Quando um adversário tenta entrar no CLINCH com você, o que você faz?';
+                    document.getElementById('1').innerHTML = `Deixo ele tentar, pois sei que sou melhor que ele!`
+                    document.getElementById('2').innerHTML = `Entro com ele mas vou adotar uma postura mais defensiva.`
+                    document.getElementById('3').innerHTML = `Tento sair o mais rápido possivel.`
+                    document.getElementById('4').innerHTML = `Não me garanto muito, mas consigo me virar!`
+                } else if (resposta === 'B') {
+                    muayKhao = muayKhao + 3;
+                    document.getElementById('pergunta').innerHTML = 'Pergunta 3: Quando um adversário tenta entrar no CLINCH com você, o que você faz?';
+                    document.getElementById('1').innerHTML = `Deixo ele tentar pois sei que sou melhor que ele!`
+                    document.getElementById('2').innerHTML = `Entro com ele mas vou adotar uma postura mais defensiva.`
+                    document.getElementById('3').innerHTML = `Tento sair o mais rápido possivel.`
+                    document.getElementById('4').innerHTML = `Não me garanto muito, mas consigo me virar!`
+                } else if (resposta === 'C') {
+                    muayFimeu = muayFimeu + 2;
+                    muayMatt = muayMatt + 3;
+                    document.getElementById('pergunta').innerHTML = 'Pergunta 3: Quando um adversário tenta entrar no CLINCH com você, o que você faz?';
+                    document.getElementById('1').innerHTML = `Deixo ele tentar pois sei que sou melhor que ele!`
+                    document.getElementById('2').innerHTML = `Entro com ele mas vou adotar uma postura mais defensiva.`
+                    document.getElementById('3').innerHTML = `Tento sair o mais rápido possivel.`
+                    document.getElementById('4').innerHTML = `Não me garanto muito, mas consigo me virar!`
+                } else if (resposta === 'D') {
+                    muayFimeu = muayFimeu + 3
+                    document.getElementById('pergunta').innerHTML = 'Pergunta 3: Quando um adversário tenta entrar no CLINCH com você, o que você faz?';
+                    document.getElementById('1').innerHTML = `Deixo ele tentar pois sei que sou melhor que ele!`
+                    document.getElementById('2').innerHTML = `Entro com ele mas vou adotar uma postura mais defensiva.`
+                    document.getElementById('3').innerHTML = `Tento sair o mais rápido possivel.`
+                    document.getElementById('4').innerHTML = `Não me garanto muito, mas consigo me virar!`
+                }
+            } else if (numeroPergunta === 3) {
+                if (resposta === 'A') {
+                    muayKhao = muayKhao + 3;
+                    muayFimeu = muayFimeu + 1;
+                } else if (resposta === 'B') {
+                    muayKhao = muayKhao + 1;
+                    muayFimeu = muayFimeu + 2;
+                } else if (resposta === 'C') {
+                    muayDan = muayDan + 2;
+                    muayMatt = muayMatt + 1;
+                } else if (resposta === 'D') {
+                    muayDan = muayDan + 1;
+                    muayMatt = muayMatt + 2;
+                }
+                if (muayFimeu > muayDan && muayFimeu > muayKhao && muayFimeu > muayMatt) {
+                    estiloLutador = "Muay Fimeu";
+                    mensagemLutador = "Os lutadores de Muay Fimeu são conhecidos pela sua agilidade e habilidades técnicas refinadas. Eles se destacam por sua capacidade de esquivar-se dos ataques do oponente e responder com golpes precisos e rápidos. A ênfase está na movimentação elegante e na técnica impecável."
+                } else if (muayDan > muayKhao && muayDan > muayMatt) {
+                    estiloLutador = "Muay Dan";
+                    mensagemLutador = "Os lutadores de Muay Dan são reconhecidos pela sua força e poder destrutivo. Eles são especialistas em ataques poderosos e devastadores, capazes de nocautear o oponente com um único golpe bem colocado. A abordagem do Muay Dan é mais direta e centrada na força bruta."
+                } else if (muayKhao > muayMatt) {
+                    estiloLutador = "Muay Khao";
+                    mensagemLutador = "Os lutadores de Muay Khao são famosos pela sua ferocidade e agressividade dentro do ringue. Eles se destacam pelo uso eficaz dos cotovelos e dos joelhos, buscando sempre o clinch para desferir golpes poderosos de curta distância. A abordagem do Muay Khao é intimidadora e implacável, buscando dominar o oponente rapidamente."
+                } else {
+                    estiloLutador = "Muay Matt";
+                    mensagemLutador = "Os lutadores de Muay Matt são conhecidos pela sua resistência, determinação e seus potentes chutes na região inferior do corpo. Com esses chutes combinandos com um jogo de mão feroz, eles são capazes de manter uma pressão constante sobre o oponente. A estratégia do Muay Matt é desgastar o adversário ao longo do combate."
+                }
+                mostrarResultado()
+            }
+        }
+
+        function mostrarResultado() {
+            document.getElementById('pergunta-container').style.display = 'none';
+            document.getElementById('resultado-container').style.display = 'block';
+            document.getElementById('resultado').innerHTML = `<b style="color: #A51931;">${estiloLutador}</b>: <br> ${mensagemLutador}`;
+        }
+    </script>
+</body>
+
+</html>
