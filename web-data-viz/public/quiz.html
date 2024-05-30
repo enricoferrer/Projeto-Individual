@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muay Art | Quiz</title>
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+
+<body>
+    <div class="quizContainer">
+        <div class="quizInicio" id="quizInicio">
+            <h1>Seja Bem Vindo ao Quiz <span>Muay Art!</span></h1>
+
+            <h2>Faça o Quiz e descubra seu estilo de lutador!</h2>
+            <button onclick="iniciarQuiz()">Iniciar</button>
+        </div>
+
+        <div class="quizQuest1" id="quizQuest1">
+            <h1>Você se considera uma pessoa estrategista?</h1>
+            <div class="respostas">
+                Sim, penso muito bem antes de agir
+                <input type="checkbox" name="" id="">
+                Não
+                <input type="checkbox" name="" id="">
+                <br>
+                As vezes
+                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="" id="">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function iniciarQuiz() {
+        quizInicio.style.display = 'none'
+    }
+    
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                checkboxes.forEach((otherCheckbox) => {
+                    if (otherCheckbox !== this) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            }
+        });
+    });
+</script>

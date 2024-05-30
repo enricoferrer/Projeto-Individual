@@ -285,3 +285,55 @@ a :hover{
   .github {
     width: 30px;
   }
+
+  .contONU {
+    height: 800px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .ContTextONU {
+    width: 50%;
+    height: 100%;
+    background-color: #000;
+    color: white;
+  }
+
+  .ContImgONU {
+    width: 50%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textONU {
+    color: white;
+    padding: 5%;
+  }
+
+  .imgONU {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgONU > img {
+    background-image: url(../assets/imgs/ODS3_pt.webp);
+    width: 80%;
+    height: 80%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+  }
+
+  .textONU > h1{
+    text-shadow: 0 0 15px #A51931, 0 0 15px #A51931, 0 0 30px #A51931
+  }
+
+  .textONU > span {
+    font-size: 18px;
+  }
