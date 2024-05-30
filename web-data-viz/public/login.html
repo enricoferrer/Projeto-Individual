@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muay Art - Login</title>
+    <link rel="stylesheet" href="css/styleLogin.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <a class="logo" href="index.html"><img class="logo" src="assets/imgs/Muay Art (2).png" alt=""></a>
+            <ul class="nav-list">
+                <li><a href="#sobreMim">Sobre Mim</a></li>
+                <li><a href="#inspirações">Inspirações</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="Inicio" id="Inicio">
+            <div class="card">
+                <div class="contentLog">
+                    <t>Entrar</t>
+                    <br>
+                    <br>
+                    <input type="text" id="email_input" class="input" placeholder="Email"></c>
+                    <br>
+                    <br>
+                    <input type="password" id="senha_input" class="input" placeholder="Senha"></c>
+                    <button class="ButLog"><a href="cadastro.html" style="color: black; font-family: JetBrains Mono, monospace;">Ainda não é cadastrado?</a></button>
+                    <button class="ButLog" style="color: black; font-family: JetBrains Mono, monospace;" onclick="entrar()">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            alert("Todos os campos em branco");
+            return false;
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+        // window.location = "./dashboard/cards.html"
+    }
+
+</script>
