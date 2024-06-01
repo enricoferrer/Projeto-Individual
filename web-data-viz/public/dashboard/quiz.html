@@ -125,16 +125,16 @@
                     muayMatt = muayMatt + 2;
                 }
                 if (muayFimeu > muayDan && muayFimeu > muayKhao && muayFimeu > muayMatt) {
-                    estiloLutador = "Muay Fimeu";
+                    resultado = "Muay Fimeu";
                     mensagemLutador = "Os lutadores de Muay Fimeu são conhecidos pela sua agilidade e habilidades técnicas refinadas. Eles se destacam por sua capacidade de esquivar-se dos ataques do oponente e responder com golpes precisos e rápidos. A ênfase está na movimentação elegante e na técnica impecável."
                 } else if (muayDan > muayKhao && muayDan > muayMatt) {
-                    estiloLutador = "Muay Dan";
+                    resultado = "Muay Dan";
                     mensagemLutador = "Os lutadores de Muay Dan são reconhecidos pela sua força e poder destrutivo. Eles são especialistas em ataques poderosos e devastadores, capazes de nocautear o oponente com um único golpe bem colocado. A abordagem do Muay Dan é mais direta e centrada na força bruta."
                 } else if (muayKhao > muayMatt) {
-                    estiloLutador = "Muay Khao";
+                    resultado = "Muay Khao";
                     mensagemLutador = "Os lutadores de Muay Khao são famosos pela sua ferocidade e agressividade dentro do ringue. Eles se destacam pelo uso eficaz dos cotovelos e dos joelhos, buscando sempre o clinch para desferir golpes poderosos de curta distância. A abordagem do Muay Khao é intimidadora e implacável, buscando dominar o oponente rapidamente."
                 } else {
-                    estiloLutador = "Muay Matt";
+                    resultado = "Muay Matt";
                     mensagemLutador = "Os lutadores de Muay Matt são conhecidos pela sua resistência, determinação e seus potentes chutes na região inferior do corpo. Com esses chutes combinandos com um jogo de mão feroz, eles são capazes de manter uma pressão constante sobre o oponente. A estratégia do Muay Matt é desgastar o adversário ao longo do combate."
                 }
                 mostrarResultado()
@@ -144,7 +144,22 @@
         function mostrarResultado() {
             document.getElementById('pergunta-container').style.display = 'none';
             document.getElementById('resultado-container').style.display = 'block';
-            document.getElementById('resultado').innerHTML = `<b style="color: #A51931;">${estiloLutador}</b>: <br> ${mensagemLutador}`;
+            document.getElementById('resultado').innerHTML = `<b style="color: #A51931;">${resultado}</b>: <br> ${mensagemLutador}`;
+
+            var idUsuario = sessionStorage.ID_USUARIO;
+            
+            fetch("/usuarios/quiz", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    idServer: idUsuario,
+                    resultadoServer: resultado
+                }),
+            })
         }
     </script>
 </body>
