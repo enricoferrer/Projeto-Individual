@@ -86,6 +86,15 @@
       var sobrenomeVar = sobrenome_input.value;
       var senhaVar = senha_input.value;
       var confirmacaoSenhaVar = confirmacao_senha_input.value;
+      let senhaComNumero = false;
+
+      for(let contador = 0;contador < senhaVar.length;contador++) {
+        if(!isNaN(senhaVar[contador])){
+          senhaComNumero = true;
+          break;
+        }
+      }
+      
       if (
         nomeVar == "" ||
         emailVar == "" ||
@@ -113,6 +122,8 @@
         alert("Campo Confirmar Senha deve conter o mesmo valor do campo Senha!");
         finalizarAguardar();
         return false;
+      }else if(senhaComNumero == false) {
+        alert ("Senha precisa conter pelo menos um número!")
       } else {
         // setInterval(sumirMensagem, 5000);
       
