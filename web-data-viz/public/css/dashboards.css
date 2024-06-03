@@ -284,6 +284,10 @@ body {
   justify-content: center;
 }
 
+.tituloGraficos > span {
+  font-size: 19px;
+}
+
 .btn-chart {
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border: 0;

@@ -66,18 +66,18 @@
             <div id="alerta">
             </div>
 
-            <div class="btns-dash" id="btnAquario">
+            <div class="btns-dash" id="btnAquario" style="width: 400px;">
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-                <div id="grafico">
+                <div id="grafico" style="display: block; width: 400px;">
                        <h3 class="tituloGraficos">
-                           <span id="tituloAquario"></span>
+                           <span id="tituloAquario">Quantidade de Pessoas com determinado Estilo:</span>
                        </h3>
                        <div class="graph">
                            <canvas id="myChartCanvas"></canvas>
                        </div>
                        <div class="label-captura">
                            <p id="avisoCaptura" style="color: white"></p>
-                       </div>
+                       </div>   
                    </div>
             </div>
             <div id="graficos">
@@ -215,10 +215,16 @@
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Estilos',
+                label: 'Pessoas',
                 data: [],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: [
+                    'red',
+                    'green',
+                    'blue',
+                    'yellow'
+                ],
+                fill: true,
+                borderColor: 'white',
                 tension: 0.1
             },
             // {
@@ -263,7 +269,7 @@
             config
         );
 
-        // setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+        // setTimeout (1000000);
     }
 
 
