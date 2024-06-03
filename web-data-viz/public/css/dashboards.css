@@ -124,7 +124,7 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: #444446;
   height: 100vh;
   overflow: auto;
 }
@@ -433,4 +433,13 @@ canvas {
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+}
+
+.contNumber {
+  width: 60px;
+  height: 40px;
+  background-color: white;
+  text-align: center;
+  margin-left: 510px;
+  border-radius: 40px;
 }

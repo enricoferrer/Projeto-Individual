@@ -21,6 +21,19 @@ function buscarUltimasMedidas(req, res) {
     });
 }
 
+function buscarTotalPessoas(req, res) {
+    medidaModel.buscarTotalPessoas().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar o total de pessoas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
 
 function buscarMedidasEmTempoReal(req, res) {
 
@@ -43,6 +56,6 @@ function buscarMedidasEmTempoReal(req, res) {
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
-
+    buscarMedidasEmTempoReal,
+    buscarTotalPessoas
 }

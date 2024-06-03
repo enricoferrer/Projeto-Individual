@@ -82,6 +82,13 @@
             </div>
             <div id="graficos">
             </div>
+
+            <div class="pessoasTodo">
+                <h3 class="tituloGraficos">Quantas Pessoas fizeram o QUIZ:</h3>
+                <div class="contNumber">
+                    <span id="span_total" style="color: #AF2131; font-size: 30px;"></span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -198,6 +205,25 @@
         })
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+
+
+            fetch(`/medidas/qtdPessoas`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (respostaTotal) {
+                    console.log(`Dados recebidos: ${JSON.stringify(respostaTotal)}`);
+                    var totalPessoas = respostaTotal[0].total;
+
+                    span_total.innerHTML = `${totalPessoas}`
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ KPI: ${error.message}`);
             });
     }
 
